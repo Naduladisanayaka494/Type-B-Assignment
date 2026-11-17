@@ -7,6 +7,7 @@ A clean, production-ready Java Spring Boot REST API that exposes a `/hello-world
 ## Tech Stack
 - **Language:** Java 21
 - **Framework:** Spring Boot 3.3.5 (`spring-boot-starter-web`)
+- **API Documentation:** SpringDoc OpenAPI 3 / Swagger UI (`springdoc-openapi-starter-webmvc-ui`)
 - **Build Tool:** Apache Maven
 - **Testing:** JUnit 5 (Parameterized Tests) & Spring MockMvc (`spring-boot-starter-test`)
 
@@ -33,6 +34,11 @@ java -jar target/hello-world-api-1.0.0.jar
 ```
 
 The server starts on `http://localhost:8080`.
+
+### Interactive Testing with Swagger UI
+Once the application is running, you can test the endpoint interactively in your browser via **Swagger UI**:
+- **Swagger UI:** http://localhost:8080/swagger-ui.html (or http://localhost:8080/swagger-ui/index.html)
+- **OpenAPI JSON Spec:** http://localhost:8080/v3/api-docs
 
 ### Example Requests
 

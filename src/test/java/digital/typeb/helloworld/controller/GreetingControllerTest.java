@@ -83,4 +83,20 @@ class GreetingControllerTest {
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.error").value("Invalid Input"));
     }
+
+    @Test
+    @DisplayName("GET /v3/api-docs -> 200 OK with OpenAPI specification containing /hello-world")
+    void shouldExposeOpenApiSpecification() throws Exception {
+        mockMvc.perform(get("/v3/api-docs"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.paths['/hello-world']").exists());
+    }
+
+    @Test
+    @DisplayName("GET /swagger-ui/index.html -> 200 OK serving Swagger UI")
+    void shouldExposeSwaggerUiPage() throws Exception {
+        mockMvc.perform(get("/swagger-ui/index.html"))
+                .andExpect(status().isOk());
+    }
 }
