@@ -13,6 +13,19 @@ A clean, production-ready Java Spring Boot REST API that exposes a `/hello-world
 
 ---
 
+## Swagger UI & OpenAPI URLs
+
+Once the application is running on `http://localhost:8080`, you can explore and test the API interactively in your browser:
+
+| Resource | URL |
+| :--- | :--- |
+| **Swagger UI (Interactive Page)** | [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) |
+| **Swagger UI (Shortcut Redirect)** | [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) |
+| **OpenAPI 3 JSON Specification** | [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs) |
+| **Sample Valid API Call** | [http://localhost:8080/hello-world?name=alice](http://localhost:8080/hello-world?name=alice) |
+
+---
+
 ## How to Run the Application
 
 ### Prerequisites
@@ -34,11 +47,6 @@ java -jar target/hello-world-api-1.0.0.jar
 ```
 
 The server starts on `http://localhost:8080`.
-
-### Interactive Testing with Swagger UI
-Once the application is running, you can test the endpoint interactively in your browser via **Swagger UI**:
-- **Swagger UI:** http://localhost:8080/swagger-ui.html (or http://localhost:8080/swagger-ui/index.html)
-- **OpenAPI JSON Spec:** http://localhost:8080/v3/api-docs
 
 ### Example Requests
 
