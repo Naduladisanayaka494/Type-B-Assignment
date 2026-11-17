@@ -7,37 +7,22 @@ A clean, production-ready Java Spring Boot REST API that exposes a `/hello-world
 ## Tech Stack
 - **Language:** Java 21
 - **Framework:** Spring Boot 3.3.5 (`spring-boot-starter-web`)
+- **API Documentation:** SpringDoc OpenAPI 3 / Swagger UI (`springdoc-openapi-starter-webmvc-ui`)
 - **Build Tool:** Apache Maven
 - **Testing:** JUnit 5 (Parameterized Tests) & Spring MockMvc (`spring-boot-starter-test`)
 
 ---
 
-## Project Architecture
+## Swagger UI & OpenAPI URLs
 
-```text
-src
-├── main
-│   ├── java/digital/typeb/helloworld
-│   │   ├── HelloWorldApplication.java          # Spring Boot entry point
-│   │   ├── controller
-│   │   │   └── GreetingController.java         # REST controller (GET /hello-world)
-│   │   ├── service
-│   │   │   └── GreetingService.java            # Core validation & name formatting logic
-│   │   ├── dto
-│   │   │   ├── GreetingResponse.java           # Immutable Java record: { "message": "..." }
-│   │   │   └── ErrorResponse.java              # Immutable Java record: { "error": "..." }
-│   │   └── exception
-│   │       ├── InvalidNameException.java       # Domain validation exception
-│   │       └── GlobalExceptionHandler.java     # Centralized @RestControllerAdvice error mapping
-│   └── resources
-│       └── application.properties              # Application configuration (port 8080)
-└── test
-    └── java/digital/typeb/helloworld
-        ├── controller
-        │   └── GreetingControllerTest.java     # MockMvc HTTP integration tests
-        └── service
-            └── GreetingServiceTest.java        # JUnit 5 parameterized unit tests
-```
+Once the application is running on `http://localhost:8080`, you can explore and test the API interactively in your browser:
+
+| Resource | URL |
+| :--- | :--- |
+| **Swagger UI (Interactive Page)** | [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) |
+| **Swagger UI (Shortcut Redirect)** | [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) |
+| **OpenAPI 3 JSON Specification** | [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs) |
+| **Sample Valid API Call** | [http://localhost:8080/hello-world?name=alice](http://localhost:8080/hello-world?name=alice) |
 
 ---
 
